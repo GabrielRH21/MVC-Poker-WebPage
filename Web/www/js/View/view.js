@@ -37,7 +37,7 @@ export class View {
   }
 
   /**
- * @description This method update the values of the buttons 
+ * @description This method update the images of the cards
  * on the web page
  * @public
  * @param {String} button Name of the button
@@ -65,6 +65,10 @@ export class View {
     }
   }
 
+  /**
+   * @description This method update the winner tittle.
+   * @param {String} winner name and reason of the winner
+   */
   updateWinner(winner) {
     document.getElementById('winner').innerHTML = 'El ganador es el jugador ' + winner;
   }

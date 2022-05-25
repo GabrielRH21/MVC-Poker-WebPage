@@ -20,20 +20,58 @@
 import { PokerHand } from "../Model/pokerHand.js";
 
 export class Controller {
+
+  /**
+   * @property {Object} buttonOne This is the first button that interact with
+   * the first hand
+   * @private
+   */
   #buttonOne =  document.getElementById('dealOne');
 
+  /**
+   * @property {Object} buttonTwo This is the second button that interact with
+   * the second hand
+   * @private
+   */
   #buttonTwo =  document.getElementById('dealTwo');
 
+  /**
+   * @property {Canvas} boardOne This is the canvas that contains the first hand
+   * @private
+   */
   #boardOne;
 
+  /**
+   * @property {Canvas} boardTwo This is the canvas that contains the second hand
+   * @private
+   */
   #boardTwo;
 
+  /**
+   * @property {View} view The view of  the program
+   * @private
+   */
   #view;
 
+  /**
+   * @property {Array} hands Array with the hands that are playing
+   */
   #hands;
 
+  /**
+   * @property {Deck} deck Deck with cards
+   * @private
+   */
   #deck;
 
+  /**
+   * @description constructor of the class, it collects the events 
+   * launched by the buttons and manage the model and the view
+   * @param {View} view The view of  the program
+   * @param {Deck} deck Deck with cards
+   * @param {Canvas} first This is the canvas that contains the first hand
+   * @param {Canvas} second This is the canvas that contains the first hand
+   */
   constructor(view, deck, first, second) {
     this.#view = view;
     this.#deck = deck;
@@ -53,7 +91,7 @@ export class Controller {
     console.log(firstPoker.getType());
     console.log(secondPoker.getType());
     if (firstPoker.win(secondPoker)) {
-      if (secondPoker.getType() === undefined) {
+      if (firstPoker.getType() === undefined) {
         reason = 'mayor carta';
       } else {
         reason = `${firstPoker.getType()}`
@@ -77,7 +115,7 @@ export class Controller {
       firstPoker = new PokerHand(hands[0]);
       firstPoker.classify();
       if (firstPoker.win(secondPoker)) {
-        if (secondPoker.getType() === undefined) {
+        if (firstPoker.getType() === undefined) {
           reason = 'mayor carta';
         } else {
           reason = `${firstPoker.getType()}`
@@ -101,13 +139,26 @@ export class Controller {
       secondPoker = new PokerHand(hands[1]);
       secondPoker.classify();
       if (firstPoker.win(secondPoker)) {
-        winner = 1;
+        if (secondPoker.getType() === undefined) {
+          reason = 'mayor carta';
+        } else {
+          reason = `${firstPoker.getType()}`
+        }
+        winner =  '1!! Por ' + reason;
       } else {
-        winner = 2;
+        if (secondPoker.getType() === undefined) {
+          reason = 'mayor carta';
+        } else {
+          reason = `${secondPoker.getType()}`
+        }
+        
+        winner = '2!! Por ' + reason;
       }
       console.log(firstPoker.getType());
       console.log(secondPoker.getType());
       view.updateWinner(winner);
     });
   }
+
+  
 }

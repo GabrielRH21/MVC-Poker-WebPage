@@ -20,10 +20,16 @@
 import { Cards } from "./card.js";
 import { Hand } from "./hand.js";
 
+/**
+ * @description This class allows you to store a deck of cards, 
+ * it also allows you to deal cards to hands and exchange them
+ * @class
+ */
 export class Deck {
 
   /**
    * @property {Array} deck Deck of french cards
+   * @private
    */
   #deck = [];
 

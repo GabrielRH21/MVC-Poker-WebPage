@@ -18,10 +18,30 @@
 'use strict';
 
 export class Cards {
+
+  /**
+   * @property {String} suit Suit of the card
+   * @private
+   */
   #suit;
+
+  /**
+   * @property {String} rank Rank of the card
+   * @private
+   */
   #rank;
+
+  /**
+   * @property {String} image Direction of the image
+   * @private
+   */
   #image;
 
+  /**
+   * @description Constructor of the class, the  attributes are instanced here
+   * @param {String} newSuit Suit of the card
+   * @param {String} newRank Rank of the card
+   */
   constructor(newSuit, newRank) {
     this.#suit = newSuit;
     this.#rank = newRank;
@@ -30,22 +50,48 @@ export class Cards {
 
   }
 
+  /**
+   * @description This method return the name of the card
+   * @public
+   * @returns {String} The name of the card
+   */
   toString() {
     return  `${this.#rank} of ${this.#suit}`;
   }
 
+  /**
+   * @description This method return the suit of the image
+   * @public
+   * @returns {String} Suit of the card
+   */
   getSuit() {
     return this.#suit;
   }
 
+  /**
+   * @description This method return the rank of the image
+   * @public
+   * @returns {String} Rank of the card
+   */
   getRank() {
     return this.#rank;
   }
 
+  /**
+   * @description This method return the direction of the image
+   * @public
+   * @returns {String} Direction of the image
+   */
   getImage() {
     return this.#image;
   }
 
+  /**
+   * @description This method compare two card to see which one is the best
+   * @public
+   * @param {Card} toCompare The card that is going to be compared
+   * @returns {Boolean}
+   */
   biggerSuitThan(toCompare) {
     switch (toCompare.getSuit()) {
       case 'Spades':
@@ -83,7 +129,12 @@ export class Cards {
     }
   }
 
-
+  /**
+   * @description This method compare two card to see which one is the best
+   * @public
+   * @param {Card} toCompare The card that is going to be compared
+   * @returns {Boolean}
+   */
   biggerRankThan(toCompare) {
     let compareRank = toCompare.getRank();
     switch (compareRank) {
@@ -103,12 +154,12 @@ export class Cards {
         compareRank = Number(toCompare.getRank());
       break;
     }
-    let myRank  = rankToNumber();
+    let myRank  = this.#rankToNumber();
     return myRank > compareRank;
   }
   
 
-  rankToNumber() {
+  #rankToNumber() {
     switch (this.#rank) {
       case 'A':
         return 14;

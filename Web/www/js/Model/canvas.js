@@ -36,7 +36,6 @@ export class Canvas {
    */
   #ctx;
 
-  #data
 
   /**
    * @property {Number} width The width of the canvas
@@ -62,15 +61,6 @@ export class Canvas {
     this.#body.height = canvasHeight - 75;
     this.#width = canvasWidth;
     this.#height = canvasHeight;
-
-    /*let img = new Image();
-    img.onload = () => {
-      this.#ctx.drawImage(img, 0, 0, this.#body.width / 5, this.#body.height);
-      console.log('Se ha cargado');
-    };
-    img.src = "/js/Model/img/2D.png";
-    this.#ctx.drawImage(img, 0, 0);
-    this.#ctx.stroke()*/
   }
 
 
@@ -84,10 +74,20 @@ export class Canvas {
     return this.#body;
   }
 
+  /**
+   * @description This method returns the width of the canvas
+   * @public
+   * @return {Number} Return the Width of the canvas
+   */
   getWidth() {
     return this.#body.width;
   }
 
+  /**
+   * @description This method returns the height of the canvas
+   * @public
+   * @return {Number} Return the height of the canvas
+   */
   getHeight() {
     return this.#body.height;
   }

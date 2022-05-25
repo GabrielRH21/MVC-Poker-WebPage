@@ -19,12 +19,16 @@
 
 import { Cards } from "./card.js";
 
+/**
+ * @description This class manages the card hands, allowing them to be operated
+ * @class
+ */
 export  class Hand {
+  /**
+   * @property {Array} hand hand of cards
+   * @private
+   */
   #hand = [];
-
-  constructor() {
-
-  }
 
   /**
   * @description This method Remove a card from the hand and return it.
@@ -47,8 +51,13 @@ export  class Hand {
     */
   }
 
+  /**
+   * @description This method return the best hand
+   * @public
+   * @returns {Number} Value of the best card
+   */
   getBigger() {
-    let values = this.getValues()
+    let values = this.#getValues()
     let max = values[0];
     for (let i = 1; i < this.#hand.length; ++i) {
       if (max < values[i]) {
@@ -58,7 +67,13 @@ export  class Hand {
     return max;
   }
 
-  getValues() {
+  /**
+   * @description This method return all the values 
+   * of the cards in the hand
+   * @private
+   * @returns {Array} All the values of the cards in the hand
+   */
+  #getValues() {
     let value;
     let handValues  = [];
     for (let i = 0; i < this.#hand.length; ++i) {

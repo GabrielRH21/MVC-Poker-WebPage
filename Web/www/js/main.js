@@ -21,12 +21,12 @@ import { Controller } from './Controller/controller.js';
 import { Canvas } from './Model/canvas.js';
 import { Cards } from './Model/card.js'
 import { Deck } from './Model/deck.js'
+import { Hand } from './Model/hand.js';
+import { PokerHand } from './Model/pokerHand.js';
 import { View } from './View/view.js';
 
 /**
- * @description This function creates the canvas and manages the balls movements
- * @param {Number} width width of the canvas
- * @param {Number} height height of the canvas
+ * @description This function creates the canvas and manages the poker program
  */
 function main() {
   let firstboard = new Canvas(window.innerWidth - 100, window.innerHeight / 2 - 75, 'firstcanvas');
@@ -34,6 +34,14 @@ function main() {
   let view = new View(document);
   let deck = new Deck();
   let controller = new Controller(view, deck, firstboard, secondBoard);
+  /*let hand = new Hand();
+  hand.addCard(new Cards('Diamonds', '10'));
+  hand.addCard(new Cards('Clubs', '9'));
+  hand.addCard(new Cards('Spades', '10'));
+  hand.addCard(new Cards('Spades', 'K'));
+  hand.addCard(new Cards('Hearts', 'K'));
+  let pokerHand = new PokerHand(hand);
+  pokerHand.classify();*/
   /*let players = 2;
   let pokerCards = 5;
   let hands = deck.dealHands(players, pokerCards);
