@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Graphic Object</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Graphic Object">
+    <link rel="stylesheet" href="/css/mandelbrot.css">
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body class='body--shaded  layout--demo '>
+    <div class="header">
+      <div class="header-upper">
+        <div class="header-inner">
+          <button class="custom-btn btn-3" onclick=" window.open('ball.html','', 'width=1050, height=630')"><span>open on window</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="main">
+        <div class="preamble">
+          <h1>Graphic Objects</h1>
+          <hr>
+        </div>
+        <div id="demo"  class="">
+          <canvas id ="firstcanvas" width="800" height="300" style="border: 10px solid #999;"></canvas>
+          <h4 id="winner"></h4>
+          <canvas id ="secondcanvas" width="800" height="300" style="border: 10px solid #999;"></canvas>
+          <button class="dealOne" id="dealOne" style="width: 10%;">Deal Hand1</button>
+          <button class="dealTwo" id="dealTwo" style="width: 10%;">Deal Hand2</button>
+        </div>
+        <div class="clearfix" id="ui-container">
+          <div id="slidecontainer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

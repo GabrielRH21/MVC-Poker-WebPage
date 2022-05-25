@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+  font-size: 200%;
+  font-weight: 800;
+}
+
+
+body {
+  background: rgb(255, 255, 255);
+  color: green;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+}
+  .noscroll { 
+    overflow: hidden;
+  }
+  
+  .overlay { 
+     position: fixed; 
+     overflow-y: scroll;
+     top: 0; right: 0; bottom: 0; left: 0; }
+  
+  [aria-hidden="true"]  { display: none; }
+  [aria-hidden="false"] { display: block; }
+  
+
+
+canvas {
+  background: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: block;
+}
