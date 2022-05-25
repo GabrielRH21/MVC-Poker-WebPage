@@ -31,6 +31,12 @@ export  class Hand {
   #hand = [];
 
   /**
+   * @property {Boolean} back Indicates if the cards are form back or not
+   * @private
+   */
+  #back = false;
+
+  /**
   * @description This method Remove a card from the hand and return it.
   * @public
   * @return {Cards} Card randomly selected
@@ -65,6 +71,23 @@ export  class Hand {
       }
     }
     return max;
+  }
+
+  /**
+   * @description changes the back value;
+   * @public
+   */
+  setBack() {
+    this.#back = true;
+  }
+
+  /**
+   * @description return the back value;
+   * @public
+   * @returns {Boolean}
+   */
+  getBack() {
+    return this.#back;
   }
 
   /**

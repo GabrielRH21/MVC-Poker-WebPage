@@ -167,13 +167,17 @@ export class Deck {
   moveCards(hand, numberOfCards) {
     let handCard;
     let deckCard;
+    let firstHand = hand;
+    if (this.#deck.length < 5) {
+      console.log(this.#deck.length);
+      return true;
+    }
     for (let i = 0; i < numberOfCards; i++) {
       handCard = this.popCard();
+        hand.addCard(handCard);
       deckCard = hand.popCard();
-      hand.addCard(handCard);
-      this.addCard(deckCard);
     }
-    return hand
+    return hand;
   }
 
   /**

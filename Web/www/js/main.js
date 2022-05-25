@@ -29,8 +29,8 @@ import { View } from './View/view.js';
  * @description This function creates the canvas and manages the poker program
  */
 function main() {
-  let firstboard = new Canvas(window.innerWidth - 100, window.innerHeight / 2 - 75, 'firstcanvas');
-  let secondBoard = new Canvas(window.innerWidth - 100, window.innerHeight / 2 - 75, 'secondcanvas');
+  let firstboard = new Canvas(window.innerWidth - 150, window.innerHeight / 2 - 150, 'firstcanvas');
+  let secondBoard = new Canvas(window.innerWidth - 100, window.innerHeight / 2 - 125, 'secondcanvas');
   let view = new View(document);
   let deck = new Deck();
   let controller = new Controller(view, deck, firstboard, secondBoard);

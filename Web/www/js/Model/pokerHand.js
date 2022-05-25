@@ -359,6 +359,7 @@ export class PokerHand {
    */
   classify() {
     this.#card = this.#hand.getBigger();
+    this.#type = 'Mayor carta';
     if (this.#hasPair()) {
       this.#type = 'Pair';
       this.#handValue = 1;
